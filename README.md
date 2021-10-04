@@ -52,3 +52,8 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+## Running the tests with coverage
+
+Run mvn verify, the tests will be run and the results coverage will end up in target/jacoco-reports. 
+
