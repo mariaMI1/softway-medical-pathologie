@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class PathologieResourceTest {
 
     @Test
-    public void testPathologieRessource() {
+    public void testPathologieRessourceAvecIndexValide() {
         given()
           .when().get("/pathologie/33")
           .then()
@@ -18,4 +18,18 @@ public class PathologieResourceTest {
              .body(is("Cardiologie"));
     }
 
+    @Test
+    public void testPathologieRessourceAvecIndexNonValide() {
+        given()
+                .when().get("/pathologie/a")
+                .then()
+                .statusCode(404);
+    }
+    @Test
+    public void testPathologieRessourceSansIndex() {
+        given()
+                .when().get("/pathologie/")
+                .then()
+                .statusCode(404);
+    }
 }

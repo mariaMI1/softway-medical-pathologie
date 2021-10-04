@@ -13,17 +13,26 @@ public class PathologieServicesTest {
 
     @Test
     public void etantDonneeIndexMultipeTroisDoitRetournerCardiologue() {
-        Assertions.assertEquals(PathologieService.pathologieDepuisIndex(33), "Cardiologie");
+        Assertions.assertEquals(PathologieService.pathologiesDepuisIndex(33), "Cardiologie");
     }
 
     @Test
     public void etantDonneeIndexMultipeCinqDoitRetournerTraumatologie() {
-        Assertions.assertEquals(PathologieService.pathologieDepuisIndex(55), "Traumatologie");
+        Assertions.assertEquals(PathologieService.pathologiesDepuisIndex(55), "Traumatologie");
     }
 
     @Test
-    public void etantDonneeIndexMultipeTroisEtCinqDoitRetournerTraumatologie() {
-        Assertions.assertEquals(PathologieService.pathologieDepuisIndex(15), "Cardiologie, Traumatologie");
+    public void etantDonneeIndexMultipeTroisEtCinqDoitRetournerCardiologieTraumatologie() {
+        Assertions.assertEquals(PathologieService.pathologiesDepuisIndex(15), "Cardiologie, Traumatologie");
     }
 
+    @Test
+    public void etantDonneeIndexNonMultipleDoitRetournerAucunePathologieConnue() {
+        Assertions.assertEquals(PathologieService.pathologiesDepuisIndex(17), "Aucune pathologie connue");
+    }
+
+    @Test
+    public void etantDonneeIndexZeroDoitRetournerAucunePathologieConnue() {
+        Assertions.assertEquals(PathologieService.pathologiesDepuisIndex(0), "Aucune pathologie connue");
+    }
 }
