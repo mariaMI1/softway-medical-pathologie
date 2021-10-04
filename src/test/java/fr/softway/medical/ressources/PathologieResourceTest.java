@@ -1,4 +1,4 @@
-package fr.softway.medical;
+package fr.softway.medical.ressources;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ public class PathologieResourceTest {
         given()
                 .when().get("/pathologie/a")
                 .then()
-                .statusCode(404);
+                .statusCode(400);
     }
     @Test
     public void testPathologieRessourceSansIndex() {
